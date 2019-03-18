@@ -30,8 +30,17 @@
  */
 
 // ここでeach関数を作る
+const number = [1,2,3];
 
+function each(array, callback){
+  for(let i = 0; i < array.length; i++){
+    callback(array[i], i);
+  }
+}
 
+each(number,(value, index) => {
+  console.log(index + ':' + value);
+});
 // ここでeach関数の挙動を確かめる
 
 
@@ -63,11 +72,18 @@
  */
 
 // ここでmap関数を実装する
+const number2 = [4,5,6];
 
+function map(array, callback) {
+  for(let i = 0; i < array.length; i++){
+    callback(array[i], i);
+  }
+}
 
-// ここでmap関数の挙動を確認する
-
-
+map(number2, (value, index)=> {
+  const doubleNumber = value * 2;
+  console.log(index + ":" + doubleNumber);
+});
 
 /**
  * 課題3: 「Array.prototype.filter()」と同等の機能を持つ関数を作る
@@ -99,7 +115,21 @@
  */
 
 // ここでfilter関数を作る
+function filter(array, callback) {
+  for(let i = 0; i < array.length; i++){
+    callback(array[i], i);
+  }
+}
 
+const number3 = [7,8,9,10];
+const filterNumber = [];
+
+filter(number3,(value, index)=> {
+  if(value%2 === 0){
+    filterNumber.push(value);
+  }
+});
+
+console.log(filterNumber);
 
 // ここでfilter関数の挙動を確認する
-
